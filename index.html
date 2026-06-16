@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Logístico</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div>
+        <h1>Dashboard de Monitoramento Logístico</h1>
+        <p>Análise de atrasos por transportadora e região</p>
+      </div>
+    </header>
+
+    <section class="filters">
+      <div class="filter-group">
+        <label for="filterTransportadora">Transportadora</label>
+        <select id="filterTransportadora">
+          <option value="">Todas</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filterRegiao">Região</label>
+        <select id="filterRegiao">
+          <option value="">Todas</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filterStatus">Status</label>
+        <select id="filterStatus">
+          <option value="">Todos</option>
+          <option value="atrasada">Atrasadas</option>
+          <option value="noprazo">No prazo</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="kpis">
+      <article class="card">
+        <span>Total de entregas</span>
+        <strong id="kpiTotal">0</strong>
+      </article>
+
+      <article class="card danger">
+        <span>Entregas atrasadas</span>
+        <strong id="kpiAtrasadas">0</strong>
+      </article>
+
+      <article class="card warning">
+        <span>% de atraso</span>
+        <strong id="kpiPercentual">0%</strong>
+      </article>
+
+      <article class="card info">
+        <span>Maior atraso</span>
+        <strong id="kpiMaiorAtraso">0 dias</strong>
+      </article>
+    </section>
+
+    <section class="charts">
+      <article class="panel">
+        <h2>Atrasos por transportadora</h2>
+        <canvas id="chartTransportadora"></canvas>
+      </article>
+
+      <article class="panel">
+        <h2>Atrasos por região</h2>
+        <canvas id="chartRegiao"></canvas>
+      </article>
+    </section>
+
+    <section class="panel table-panel">
+      <h2>Entregas</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Transportadora</th>
+              <th>Região</th>
+              <th>Prazo</th>
+              <th>Real</th>
+              <th>Status</th>
+              <th>Atraso</th>
+            </tr>
+          </thead>
+          <tbody id="tabelaEntregas"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

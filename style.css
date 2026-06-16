@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.filters,
+.kpis,
+.charts {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filters {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.kpis {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.charts {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.card,
+.panel,
+.filter-group {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.card strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 28px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #222;
+    color: white;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.ok {
+    background: #d4edda;
+}
+
+.delay {
+    background: #f8d7da;
+}
+
+canvas {
+    max-height: 300px;
+}
